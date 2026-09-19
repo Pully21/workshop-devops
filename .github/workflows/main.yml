@@ -1,0 +1,20 @@
+name: CI Docker
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar codigo
+        uses: actions/checkout@v4
+
+      - name: Construir imagem Docker
+        run: docker build -t meu-projeto-devops .
+
+      - name: Testar imagem
+        run: docker run --rm meu-projeto-devops nginx -t
