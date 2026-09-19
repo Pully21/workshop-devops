@@ -1,0 +1,1 @@
+﻿Meu primeiro arquivo no S3 com LocalStack
